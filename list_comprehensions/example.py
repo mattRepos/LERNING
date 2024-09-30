@@ -1,3 +1,4 @@
+# -------------------------------------------------list comprehensions--------------------------------------------------
 sqrt = [n ** 2 for n in range(1, 21) if n % 2 == 0]
 print(sqrt)
 
@@ -36,3 +37,27 @@ lst7_1 = [1, 2, 3]
 lst7_2 = [4, 5, 6]
 l = [i + j for i, j in zip(lst7_1, lst7_2)]
 print(l)
+# --------------------------------------------next nested list comprehensions-------------------------------------------
+
+print() # создание пробелов в выводе
+a1 = [[x * row for x in range(1,11)] for row in range(1,11)]
+for row in a1:
+     print(row)
+print() # создание пробелов в выводе
+b2 = [[0 for x in range(3)] for j in range(3)]
+for j in b2:
+     print(j)
+
+numbers = [i for i in range(1, 31)]
+c2 = [i ** 2 for i in numbers if i % 2 == 0 and i % 3 == 0]
+print(c2)
+
+с3 = [[(i,j) for i in range(1, 4)] for j in range(1, 4)]
+print(с3)
+
+nested_list = [[1, 2], [3, 4], [5, 6]]
+d4 = [item
+      for sublist in nested_list        # это внешний цикл
+      for item in sublist]              # это внутренний цикл
+print(d4)
+# здесь логика такая, что берется сначала 1-й элемент исходного списка и из него извлекаеются уже вложенные элементы
